@@ -1,16 +1,24 @@
+import { Euphoria_Script } from "next/font/google";
 import Link from "next/link";
+
+const euphoriaScript = Euphoria_Script({
+  subsets: ["latin"],
+  variable: "--font-euphoria-script",
+  weight: ["400"],
+  style: ["normal"],
+});
 
 export default function Home() {
   return (
     <div className="bg-gradient-to-b from-pink-50 to-blue-50 min-h-screen flex flex-col">
       {/* Header (invisível no mobile) */}
       <header className="hidden md:flex bg-white shadow-md py-4 px-6 justify-between items-center">
-        <h1 className="text-2xl font-bold text-pink-600">Ela Mais Linda</h1>
+        <h1 className={`text-6xl font-bold text-pink-600 ${euphoriaScript.className}`}>Ela Mais Linda</h1>
         <nav className="space-x-6 text-pink-500 font-medium">
           <Link href="#home" className="hover:text-pink-700">
             Home
           </Link>
-          <Link href="#quem-somos" className="hover:text-pink-700">
+          <Link href="/about" className="hover:text-pink-700">
             Quem Somos
           </Link>
           <Link href="#contato" className="hover:text-pink-700">
@@ -55,7 +63,7 @@ export default function Home() {
           <Link href="#home" className="hover:text-pink-700">
             Home
           </Link>
-          <Link href="#quem-somos" className="hover:text-pink-700">
+          <Link href="/about" className="hover:text-pink-700">
             Quem Somos
           </Link>
           <Link href="#contato" className="hover:text-pink-700">
@@ -63,7 +71,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="mb-2">
-          © 2025 Ela Mais Linda. Todos os direitos reservados.
+          © 2025 - Ela Mais Linda. Todos os direitos reservados.
         </div>
         <div className="space-x-4">
           <Link
